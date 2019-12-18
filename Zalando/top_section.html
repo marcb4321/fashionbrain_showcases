@@ -1,0 +1,17 @@
+<h1> End-to-end product search</h1>
+<p>
+This is a demo of the end-to-end product search engine developed in FashionBrain work package 6.
+</p> 
+
+<p>
+Given a full text query such das "rotes Kleid" (eng. "red dress"), our approach retrieves matching product images. You can try different queries in the demo and visually inspect retrieved images. This demo retrieves images from the test split of the Feidegger dataset (10% of data, 879 images) and is trained specifically for queries in German language,
+but the model is scalable to multilingual queries using the crosslingual embeddings supplied in Flair and multilingual datasets. 
+</p>
+<p>
+The underlying model employs a "two-tower" architecture in which each tower embeds one modality (i.e. full text queries and product images) into a shared embedding space. 
+The embedding network for full text queries in the demo model is a bidirectional Gated Recurrent Unit (GRU) on top of pre-trained character-based LSTM (Long Short-Term Memory) embeddings for words. The embedding network for images is a shallow (3-layer) Convolutional Neural Net (CNN).
+</p>
+<p>
+The entire architecture is trained "end-to-end" to minimize a similarity cost function with supervised learning over paired image-text datasets. 
+For the demo model, we used a training split of Feidegger (80% of all data, 7034 images) which is open source and thus publicly available, allowing reproduction of our results.  The model is implemented and trained in <a href="https://github.com/zalandoresearch/flair">Flair</a> framework.
+</p>

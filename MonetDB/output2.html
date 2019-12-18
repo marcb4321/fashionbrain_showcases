@@ -1,0 +1,274 @@
+<style>
+	img {
+	width: 100%;	
+	}
+</style>
+<h1>MonetDB Window Function Extensions</h1>
+<p>To increase MonetDB's ability to process time series data, We have extended MonetDB&rsquo;s support for the SQL window functions to cover the majority as specified by the 2011 revision of the <a href="https://sigmodrecord.org/publications/sigmodRecord/1203/pdfs/10.industry.zemke.pdf">SQL standard</a>.<br />In this showcase, we elaborate the functionality that has been added together with some example queries to show their usage.</p>
+<h2>Feature Extensions</h2>
+<p>In this section we give specifications of the new window functions.</p>
+<h3>Window Analytic Functions</h3>
+<p>Besides the existing <code>RANK()</code>, <code>DENSE_RANK()</code> and <code>ROW_NUMBER()</code> functions, we have implemented all the remaining analytic functions listed in the SQL standard:</p>
+<ul>
+<li><code>PERCENT_RANK():DOUBLE</code> - calculates the relative rank of the current row, i.e. <code>(rank() - 1) / (rows in partition - 1)</code>.</li>
+<li><code>CUME_DIST():DOUBLE</code> - calculates the cumulative distribution, i.e. the number of rows preceding or peer with current row / rows in partition.</li>
+<li><code>NTILE(nbuckets BIGINT):BIGINT</code> - enumerates rows from 1 in each partition, dividing it in the most equal way possible.</li>
+<li>\<code>LAG(input A[, offset BIGINT[, default_value A ]]):A</code> - returns input value at row <code>offset</code> before the current row in the partition. If the offset row does not exist, then the <code>default_value</code> is output. By default <code>offset</code> is 1 and <code>default_value</code> is <code>NULL</code>.</li>
+<li><code>LEAD(input A[, offset BIGINT[, default\_value A ]]):A</code> - Returns input value at row <code>offset</code> after the current row in the partition. If the offset row does not exist, then the <code>default_value</code> is output. By default <code>offset</code> is 1 and <code>default_value</code> is <code>NULL</code>.</li>
+<li><code>FIRST_VALUE(input A):A</code> - Returns input value at first row of the window frame.</li>
+<li><code>LAST_VALUE(input A):A</code> - Returns input value at last row of the window frame.</li>
+<li><code>NTH_VALUE(input A, nth BIGINT):A</code> - Returns input value at <code>nth</code> row of the window frame. If there is no <code>nth</code> row in the window frame, then <code>NULL</code> is returned.</li>
+</ul>
+<h3>Aggregate Functions</h3>
+<p>We have extended our existing aggregate functions to support aggregate window functions:</p>
+<ul>
+<li><code>MIN(input A) : A</code></li>
+<li><code>MAX(input A) : A</code></li>
+<li><code>COUNT(*) : BIGINT</code></li>
+<li><code>COUNT(input A) : BIGINT</code></li>
+<li><code>SUM(input A) : A</code></li>
+<li><code>PROD(input A) : A</code></li>
+<li><code>AVG(input A) : DOUBLE</code></li>
+</ul>
+<h3>Window Functions Frames</h3>
+<p>Our window functions now support frame specifications from the SQL standard.<br />The fully implemented SQL grammar is listed bellow:</p>
+<pre><code>
+window_function_call:
+{ window_aggregate_function | window_rank_function } OVER { ident | `(' window_specification `)' }
+
+window_aggregate_function:
+  AVG `(' query_expression `)'
+| COUNT `(' { `*' | query_expression } `)'
+| MAX `(' query_expression `)'
+| MIN `(' query_expression `)'
+| PROD `(' query_expression `)'
+| SUM `(' query_expression `)'
+
+window_rank_function:
+  CUME_DIST `(' `)'
+| DENSE_RANK `(' `)'
+| FIRST_VALUE `(' query_expression `)'
+| LAG `(' query_expression [ `,' query_expression [ `,' query_expression ] ] `)'
+| LAST_VALUE `(' query_expression `)'
+| LEAD `(' query_expression [ `,' query_expression [ `,' query_expression ] ] `)'
+| NTH_VALUE `(' query_expression `,' query_expression `)'
+| NTILE `(' query_expression `)'
+| PERCENT_RANK `(' `)'
+| RANK `(' `)'
+| ROW_NUMBER `(' `)'
+
+window_specification:
+[ ident ] [ PARTITION BY column_ref  [ `,' ... ] ] [ ORDER BY sort_spec ] 
+[ { ROWS | RANGE | GROUPS } { window_frame_start | BETWEEN window_bound AND window_bound } 
+  [ EXCLUDING { CURRENT ROW | GROUP | TIES | NO OTHERS } ] ]
+
+window_bound:
+  UNBOUNDED FOLLOWING
+| query_expression FOLLOWING
+| UNBOUNDED PRECEDING
+| query_expression PRECEDING
+| CURRENT ROW
+
+window_frame_start:
+  UNBOUNDED PRECEDING
+| query_expression PRECEDING
+| CURRENT ROW
+</code></pre>
+<p>The supported frames are: <code>ROWS</code>, <code>RANGE</code> and <code>GROUPS</code>.</p>
+<ul>
+<li><code>ROWS</code> - frames are calculated on physical offsets of input rows.</li>
+<li><code>RANGE</code> - result frames are calculated on value differences from input rows (used with a custom <code>PRECEDING</code> or <code>FOLLOWING</code> bound requires an <code>ORDER BY</code> clause).</li>
+<li><code>GROUPS</code> - groups of equal row values are used to calculate result frames (requires an ORDER BY clause).</li>
+</ul>
+<p>After a window frame declaration, the window bounds must be specified (the window function will be applied to each frame derived from each row in the input). If <code>window_frame_start</code> bound is provided, then the frame&rsquo;s end will be set to <code>CURRENT ROW</code>. An <code>UNBOUNDED PRECEDING</code> bound means the first row of a partition, while an <code>UNBOUNDED FOLLOWING</code> means the last row of a partition. In <code>query_expression PRECEDING</code> (i.e. frame rows before the current row) and <code>query_expression FOLLOWING</code> (i.e. frame rows after the current row) bounds, the <code>query_expression</code> can evaluate to a single atom (use the same bound for every input row), or a column (use a different bound for each input row). In either case, every <code>query_expression</code> value must be non-negative and non-<code>NULL</code>, as negative and <code>NULL</code> bounds are not defined for SQL window functions. <code>CURRENT ROW</code> is equivalent to <code>0 PRECEDING</code> and <code>0 FOLLOWING</code> on either side of the bound. The SQL standard allows an <code>EXCLUDING</code> clause after the bounds definition. At the moment only <code>EXCLUDE NO OTHERS</code> (i.e. default one) is implemented, which means all rows in the window frame are used for computation of the analytic function. The frame specification has been implemented for aggregation functions, as well as the functions <code>FIRST_VALUE</code>, <code>LAST_VALUE</code> and <code>NTH_VALUE</code>. The default frame specification is <code>RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW</code> when there is an <code>ORDER BY</code> clause, and <code>RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING</code> when an <code>ORDER BY</code> clause is not present.</p>
+<h2>Example Queries</h2>
+<p>In this section, we use several example SQL queries to show how to use some of the new window functions.</p>
+<pre><code>
+CREATE TABLE analytics (col1 int, col2 int);
+INSERT INTO analytics VALUES 
+  (15, 3), (3, 1), (2, 1), (5, 3), (NULL, 2), 
+  ( 3, 2), (4, 1), (6, 3), (8, 2), (NULL, 4);
+
+SELECT PERCENT_RANK() OVER (ORDER BY col1) FROM analytics;
++--------------------+
+| L4                 |
++====================+
+|                  0 |
+|                  0 |
+| 0.2222222222222222 |
+| 0.3333333333333333 |
+| 0.3333333333333333 |
+| 0.5555555555555556 |
+| 0.6666666666666666 |
+| 0.7777777777777778 |
+| 0.8888888888888888 |
+|                  1 |
++--------------------+
+
+SELECT FIRST_VALUE(col1) OVER (PARTITION BY col2) FROM analytics;
++------+
+| L4   |
++======+
+|    3 |
+|    3 |
+|    3 |
+| null |
+| null |
+| null |
+|   15 |
+|   15 |
+|   15 |
+| null |
++------+
+
+SELECT COUNT(col1) OVER (ORDER BY col2 DESC RANGE UNBOUNDED PRECEDING) FROM analytics;
++------+
+| L4   |
++======+
+|    0 |
+|    3 |
+|    3 |
+|    3 |
+|    5 |
+|    5 |
+|    5 |
+|    8 |
+|    8 |
+|    8 |
++------+
+
+SELECT AVG(col1) OVER (ORDER BY col2 GROUPS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)
+FROM analytics;
++------+
+| L4   |
++======+
+|    3 |
+|    3 |
+|    3 |
+|    4 |
+|    4 |
+|    4 |
+| 5.75 |
+| 5.75 |
+| 5.75 |
+| 5.75 |
++------+
+</code></pre>
+<p>We have also implemented interval boundaries for time columns on <code>RANGE</code> frames.</p>
+<pre><code>
+CREATE TABLE timetable (col1 timestamp, col2 int);
+INSERT INTO timetable VALUES 
+  ('2017-01-01', 3), ('2017-02-02', 1), ('2017-03-03', 1), ('2017-04-04', 3), 
+  (NULL, 2),         ('2017-06-06', 2), ('2017-07-07', 1), ('2017-08-08', 3), 
+  ('2017-09-09', 2), (NULL, 4);
+  
+SELECT SUM(col2) OVER (ORDER BY col1 RANGE BETWEEN 
+    INTERVAL '1' MONTH PRECEDING AND INTERVAL '3' MONTH FOLLOWING)
+FROM timetable;
++------+
+| L4   |
++======+
+|    6 |
+|    6 |
+|    5 |
+|    5 |
+|    5 |
+|    5 |
+|    6 |
+|    6 |
+|    5 |
+|    2 |
++------+
+</code></pre>
+<h3>New <code>WINDOW</code> Keyword.</h3>
+<p>For convenience, we have added support for the <code>WINDOW</code> keyword. If the same window specification is to be used multiple times in a <code>SELECT</code> clause, one can define an alias for this window specification, so as to avoid repeating the same window definition. Such aliases can be defined using the new <code>WINDOW</code> keyword in a <code>FROM</code> clause. In the query below, the definitions of the aliases <code>w1</code> and <code>w2</code> show how different aliases can be defined for different window specifications on one table. The definition of the alias <code>w3</code> shows that different aliases can be defined for the same window specification. Finally, all aliases can be subsequently used in the <code>SELECT</code> clause.</p>
+<pre><code>
+  SELECT COUNT(*) OVER w1, PROD(col1) OVER w2, SUM(col1) OVER w1, 
+       AVG(col2) OVER w2, MAX(col2) OVER w3
+FROM analytics WINDOW
+    w1 AS (ROWS BETWEEN 5 PRECEDING AND 0 FOLLOWING),
+    w2 AS (RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING),
+    w3 AS (w2);
++------+--------+------+--------------------------+------+
+| L4   | L10    | L14  | L20                      | L24  |
++======+========+======+==========================+======+
+|    1 | 259200 |   15 |                      2.2 |    4 |
+|    2 | 259200 |   18 |                      2.2 |    4 |
+|    3 | 259200 |   20 |                      2.2 |    4 |
+|    4 | 259200 |   25 |                      2.2 |    4 |
+|    5 | 259200 |   25 |                      2.2 |    4 |
+|    6 | 259200 |   28 |                      2.2 |    4 |
+|    6 | 259200 |   17 |                      2.2 |    4 |
+|    6 | 259200 |   20 |                      2.2 |    4 |
+|    6 | 259200 |   26 |                      2.2 |    4 |
+|    6 | 259200 |   21 |                      2.2 |    4 |
++------+--------+------+--------------------------+------+
+</code></pre>
+<h3>Partition Orders.</h3>
+<p>Our previous partitioning implementation did not impose order in the input. With the new implementation of window functions, partitioning now imposes ascending order by default, thus pairing with the industry standard implementation. If the same expression occurs in both <code>PARTITION</code> and <code>ORDER</code> clause, then <code>ORDER</code> defines the input order:</p>
+<pre><code>
+CREATE TABLE ranktest (id INT, k STRING);
+INSERT INTO ranktest VALUES (1061,'a'),(1062,'b'),(1062,'c'),(1061,'d');
+
+SELECT ROW_NUMBER() OVER (PARTITION BY id), id FROM ranktest;
+-- Output before
++------+------+
+| L4   | id   |
++======+======+
+|    1 | 1062 |
+|    2 | 1062 |
+|    1 | 1061 |
+|    2 | 1061 |
++------+------+
+-- Output now
++------+------+
+| L4   | id   |
++======+======+
+|    1 | 1061 |
+|    2 | 1061 |
+|    1 | 1062 |
+|    2 | 1062 |
++------+------+
+</code></pre>
+<h3>Fashion sales moving average</h3>
+<p><a href="https://en.wikipedia.org/wiki/Moving_average">Moving average</a> is an important calculation in statistics. For example, it is often used in technical analysis of sales data. With the SQL 2011 window functions, it is now much easier to computing statistic methods like moving averages that explicitly address the values by their position in SQL (the relational model does not have the notion of order, so table records can only be addressed by their combined distinct values. If two records happen to contain exactly the same values, there is no way to distinguish them). In this example, we show how to compute moving average for some Zalando sales data. First, we load the data set, which contains among others a <code>gross_amount</code> for each day:</p>
+<pre><code>
+sql&gt;CREATE TABLE region1_orders (
+more&gt;    region INT DEFAULT 1,
+more&gt;    id INT,
+more&gt;    no_items FLOAT,
+more&gt;    no_orders FLOAT,
+more&gt;    gross_amount FLOAT,
+more&gt;    "date" DATE
+more&gt;);
+operation successful
+sql&gt;COPY OFFSET 2 INTO
+more&gt;  region1_orders
+more&gt;  FROM '/ZALANDO_data_M3/region1_orders.csv'
+more&gt;  (id, no_items, no_orders, gross_amount, "date")
+more&gt;  DELIMITERS ',','\n' NULL AS '' BEST EFFORT;
+729 affected rows
+</code></pre>
+<p>The query below computes moving averages of 7 preceding days for the <code>gross_amount</code>.</p>
+<pre><code>
+sql&gt;SELECT "date", gross_amount, AVG(gross_amount) OVER (ORDER BY "date" ASC 
+more&gt;    RANGE BETWEEN INTERVAL '7' DAY PRECEDING AND INTERVAL '0' DAY FOLLOWING) AS ma1week 
+more&gt;  FROM region1_orders;
++------------+--------------------------+--------------------------+
+| date       | gross_amount             | ma1week                  |
++============+==========================+==========================+
+| 2013-03-02 |           0.913448169706 |           0.913448169706 |
+| 2013-03-03 |           0.900760559146 |           0.907104364426 |
+| 2013-03-04 |           0.696187810056 |       0.8367988463026667 |
+| 2013-03-05 |           0.711312403182 |          0.8054272355225 |
+...
+| 2015-02-24 |             1.1476541021 |         1.34353897110375 |
+| 2015-02-25 |            1.12662334926 |         1.33628887056875 |
+| 2015-02-26 |            1.05794838226 |          1.3152827855675 |
+| 2015-02-27 |            1.11077032663 |       1.3009447468287498 |
+| 2015-02-28 |            1.04995952798 |          1.2978170778875 |
++------------+--------------------------+--------------------------+
+729 tuples
+</code></pre>
+<p>The complete result set is best view in a plot as shown in the following figure:</p>
+<img src="images/moving_average_example.png" alt="" />

@@ -1,0 +1,724 @@
+{
+  "annotations": [
+    {
+      "id": "64ec044f-7c00-4e38-b510-4b0ceb480846",
+      "image_id": "alexandru-zdrobau-200768-unsplash",
+      "category_id": "Jackets & Coats",
+      "product": "https://www.zalando.co.uk/modstroem-pamela-coat-classic-coat-mo421u00h-m11.html",
+      "bbox": [
+        0.13285333333333335,
+        0.3233333333333333,
+        0.54144,
+        0.545
+      ]
+    },
+    {
+      "id": "d053f2e3-ccad-4831-81bc-dec1b6d2d3b7",
+      "image_id": "alexandru-zdrobau-200768-unsplash",
+      "category_id": "Bags",
+      "product": "https://www.zalando.co.uk/zac-zac-posen-eartha-iconic-soft-top-handle-solid-handbag-zz151h056-g11.html",
+      "bbox": [
+        0.14789333333333335,
+        0.8933333333333333,
+        0.46373333333333333,
+        0.10333333333333333
+      ]
+    },
+    {
+      "id": "ea312e9b-eaf8-4221-94ab-096ed63036ee",
+      "image_id": "anthony-ginsbrook-294309-unsplash",
+      "category_id": "Eyewear",
+      "product": "https://www.zalando.co.uk/ray-ban-sunglasses-trasparent--brown-gradient-mirror-silver-ra254e00r-a11.html",
+      "bbox": [
+        0.4328571428571429,
+        0.1757142857142857,
+        0.05142857142857143,
+        0.06214285714285714
+      ]
+    },
+    {
+      "id": "6f3ecda8-169c-4eef-aff5-a2d844fca647",
+      "image_id": "anthony-ginsbrook-294309-unsplash",
+      "category_id": "Tops & Tees",
+      "product": "https://www.zalando.co.uk/g-star-vim-loose-print-t-shirt-khakiarmy-green-gs121d0i5-t11.html",
+      "bbox": [
+        0.44857142857142857,
+        0.31285714285714283,
+        0.11571428571428571,
+        0.14142857142857143
+      ]
+    },
+    {
+      "id": "09a64f51-ecec-4583-883a-a8d32f9ed3db",
+      "image_id": "anthony-ginsbrook-294309-unsplash",
+      "category_id": "Jackets & Coats",
+      "product": "https://www.zalando.co.uk/levisr-original-trucker-denim-jacket-soft-as-butter-dark-le221g031-k11.html",
+      "bbox": [
+        0.4257142857142857,
+        0.24857142857142855,
+        0.21571428571428572,
+        0.30214285714285716
+      ]
+    },
+    {
+      "id": "7e47a06c-e482-4b53-8990-c69104f0eeaa",
+      "image_id": "anthony-ginsbrook-294309-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/dorothy-perkins-rip-darcy-jeans-skinny-fit-black-dp521n076-q11.html",
+      "bbox": [
+        0.39,
+        0.4607142857142857,
+        0.18,
+        0.2571428571428571
+      ]
+    },
+    {
+      "id": "fee190a2-2a18-4d13-a02c-f7b57d126666",
+      "image_id": "anthony-ginsbrook-294309-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/converse-run-star-ox-trainers-blackalmost-black-co411a0uz-q11.html",
+      "bbox": [
+        0.57,
+        0.5507142857142857,
+        0.07857142857142857,
+        0.11357142857142857
+      ]
+    },
+    {
+      "id": "37cbbe2b-ddb5-4065-a415-ae341d05913b",
+      "image_id": "brooke-cagle-195860-unsplash",
+      "category_id": "Eyewear",
+      "product": "https://www.zalando.co.uk/ray-ban-clubmaster-sunglasses-brown-ra254f002-703.html",
+      "bbox": [
+        0.575,
+        0.34,
+        0.1575,
+        0.07333333333333333
+      ]
+    },
+    {
+      "id": "817d3f2e-69fc-4b5e-9cef-d44e2f8d6087",
+      "image_id": "brooke-cagle-195860-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/american-eagle-next-jeans-skinny-fit-am421n000-q11.html",
+      "bbox": [
+        0.3525,
+        0.6866666666666666,
+        0.3875,
+        0.31166666666666665
+      ]
+    },
+    {
+      "id": "33f9ade6-ccb0-43fc-8ece-6fbcce69ff77",
+      "image_id": "brooke-cagle-195860-unsplash",
+      "category_id": "Jumpers & Cardigans",
+      "product": "https://www.zalando.co.uk/aaiko-trilly-jumper-aa321i02m-c11.html",
+      "bbox": [
+        0.3125,
+        0.43166666666666664,
+        0.5275,
+        0.37
+      ]
+    },
+    {
+      "id": "4cbb4d22-a16a-4c0b-9aee-88c0dfbe265c",
+      "image_id": "brooke-cagle-241289-unsplash",
+      "category_id": "Tops & Tees",
+      "product": "https://www.zalando.co.uk/dickies-dickies-baseball-long-sleeved-top-black-di622d01c-q11.html",
+      "bbox": [
+        0.24497732111450524,
+        0.41833333333333333,
+        0.4524581134869944,
+        0.23666666666666666
+      ]
+    },
+    {
+      "id": "48e0b635-24cc-49ba-847d-a8f50137e296",
+      "image_id": "brooke-cagle-241289-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/camel-active-woodstock-straight-leg-jeans-grey-denim-ca522g06i-c11.html",
+      "bbox": [
+        0.16248495788206982,
+        0.52,
+        0.5124525594742202,
+        0.2833333333333333
+      ]
+    },
+    {
+      "id": "50b60c19-b4b5-4cad-bebc-cc7f10c27508",
+      "image_id": "brooke-cagle-274465-unsplash",
+      "category_id": "Eyewear",
+      "product": "https://www.zalando.co.uk/ray-ban-sunglasses-black-ra254e010-q11.html",
+      "bbox": [
+        0.41714285714285715,
+        0.36,
+        0.15428571428571428,
+        0.09642857142857142
+      ]
+    },
+    {
+      "id": "48c1c38b-fb54-44fb-a0ce-e7406a10c664",
+      "image_id": "brooke-cagle-274465-unsplash",
+      "category_id": "Jackets & Coats",
+      "product": "https://www.zalando.co.uk/jack-and-jones-jorrayan-shirt-shirt-ja222d1m9-b11.html",
+      "bbox": [
+        0.26285714285714284,
+        0.5314285714285714,
+        0.4657142857142857,
+        0.4542857142857143
+      ]
+    },
+    {
+      "id": "86416636-a987-4d22-b747-4b73826b72ff",
+      "image_id": "brooke-cagle-39574-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/river-island-petite-relaxed-fit-jeans-light-blue-denim-rif21n00e-k11.html",
+      "bbox": [
+        0.4514285714285714,
+        0.6192857142857142,
+        0.1,
+        0.2592857142857143
+      ]
+    },
+    {
+      "id": "1555699b-c4ab-40e5-8b05-4bc8ad4bb410",
+      "image_id": "brooke-cagle-39574-unsplash",
+      "category_id": "Jumpers & Cardigans",
+      "product": "https://www.zalando.co.uk/edited-fawini-jumper-edd21i009-q11.html",
+      "bbox": [
+        0.40285714285714286,
+        0.40499999999999997,
+        0.15857142857142856,
+        0.315
+      ]
+    },
+    {
+      "id": "4ca53ca4-5e62-4f95-822e-ef96667163d6",
+      "image_id": "camila-damasio-91788-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/converse-as-hi-can-trainers-black-co411a00u-802.html",
+      "bbox": [
+        0.23,
+        0.255,
+        0.3342857142857143,
+        0.5785714285714286
+      ]
+    },
+    {
+      "id": "2fcc592e-2029-405f-88f5-7416da32b2be",
+      "image_id": "camila-damasio-91788-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/converse-as-hi-can-trainers-black-co411a00u-802.html",
+      "bbox": [
+        0.5642857142857143,
+        0.14357142857142857,
+        0.29428571428571426,
+        0.567857142857143
+      ]
+    },
+    {
+      "id": "a847c028-7714-4cc8-9980-911d75a1b197",
+      "image_id": "eli-defaria-100531-unsplash",
+      "category_id": "Hats & Beanies",
+      "product": "https://www.zalando.co.uk/kangol-tropic-rap-hat-hat-black-k3954r00b-q11.html",
+      "bbox": [
+        0.44285714285714284,
+        0.12214285714285714,
+        0.15428571428571428,
+        0.10285714285714286
+      ]
+    },
+    {
+      "id": "4128674e-e1e9-43c5-9fce-c48d691952ae",
+      "image_id": "eli-defaria-100531-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/zalando-essentials-chinos-black-za821aa06-q11.html",
+      "bbox": [
+        0.39,
+        0.6235714285714286,
+        0.20714285714285716,
+        0.375
+      ]
+    },
+    {
+      "id": "9718140c-2da1-49cf-bff7-557022769a01",
+      "image_id": "eli-defaria-100531-unsplash",
+      "category_id": "Jackets & Coats",
+      "product": "https://www.zalando.co.uk/elizabeth-and-james-reese-trenchcoat-charcoal-ej321u001-q11.html",
+      "bbox": [
+        0.3442857142857143,
+        0.28928571428571426,
+        0.2814285714285714,
+        0.6
+      ]
+    },
+    {
+      "id": "89e443a6-4b41-4df2-af86-d053156f02fd",
+      "image_id": "gabriel-benois-1455544-unsplash",
+      "category_id": "Hats & Beanies",
+      "product": "https://www.zalando.co.uk/chillouts-devenport-hat-hat-brown-melange-c9654r005-o11.html",
+      "bbox": [
+        0.32382051282051283,
+        0.058333333333333334,
+        0.24397435897435896,
+        0.15833333333333333
+      ]
+    },
+    {
+      "id": "c6da1320-be8a-48a6-91aa-2ed853cb3e5e",
+      "image_id": "gabriel-benois-1455544-unsplash",
+      "category_id": "Tops & Tees",
+      "product": "https://www.zalando.co.uk/tommy-hilfiger-corp-underline-tee-print-t-shirt-white-to122o09d-a11.html",
+      "bbox": [
+        0.26837179487179486,
+        0.25,
+        0.4391538461538461,
+        0.29833333333333334
+      ]
+    },
+    {
+      "id": "6f864b40-a58e-4c01-aac4-ad68b4025fe0",
+      "image_id": "gabriel-benois-1455544-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/suit-pants-trousers-dark-brown-su322e00n-o11.html",
+      "bbox": [
+        0.13751282051282052,
+        0.3883333333333333,
+        0.7097435897435898,
+        0.4116666666666667
+      ]
+    },
+    {
+      "id": "32b7e733-31a2-4adf-b774-e7a05502f086",
+      "image_id": "gabriel-benois-1455544-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/jack-and-jones-jfwrussel-warm-winter-boots-cognac-ja212k01s-o11.html",
+      "bbox": [
+        0.707525641025641,
+        0.6216666666666667,
+        0.2506282051282051,
+        0.2
+      ]
+    },
+    {
+      "id": "43de793b-6b74-4516-9244-1dce801a0bb4",
+      "image_id": "gabriel-benois-1455544-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/jack-and-jones-jfwrussel-warm-winter-boots-cognac-ja212k01s-o11.html",
+      "bbox": [
+        0.07762820512820512,
+        0.775,
+        0.20626923076923076,
+        0.21666666666666667
+      ]
+    },
+    {
+      "id": "c2f59633-bffc-4b40-98c6-074a09d33639",
+      "image_id": "iswanto-arif-155902-unsplash",
+      "category_id": "Bags",
+      "product": "https://www.zalando.co.uk/pier-one-laptop-bag-cognac-foxy-pi952h02w-o11.html",
+      "bbox": [
+        0.41,
+        0.46071428571428574,
+        0.09285714285714286,
+        0.35571428571428576
+      ]
+    },
+    {
+      "id": "b322d82f-6fb8-41ac-b438-fa6a2f662278",
+      "image_id": "iswanto-arif-155902-unsplash",
+      "category_id": "Jackets & Coats",
+      "product": "https://www.zalando.co.uk/harrington-harrington-jacket-red-ha422g002-304.html",
+      "bbox": [
+        0.4328571428571429,
+        0.47785714285714287,
+        0.1657142857142857,
+        0.3235714285714286
+      ]
+    },
+    {
+      "id": "7e02f499-6632-465c-961a-3a0acd414f37",
+      "image_id": "iswanto-arif-155902-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/blend-bhnatan-pants-chinos-bl522e00r-b11.html",
+      "bbox": [
+        0.4614285714285714,
+        0.7500000000000001,
+        0.12571428571428572,
+        0.24642857142857144
+      ]
+    },
+    {
+      "id": "2d1ec4a8-e888-46df-a960-b9966300e5f7",
+      "image_id": "jules-d-1424239-unsplash",
+      "category_id": "Hats & Beanies",
+      "product": "https://www.zalando.co.uk/new-era-vintage-9twenty-cap-ne352p053-o11.html",
+      "bbox": [
+        0.3347092850786117,
+        0.14333333333333334,
+        0.2813927617917532,
+        0.215
+      ]
+    },
+    {
+      "id": "c054a1ed-7e1f-441d-9d5a-fae460b54d8e",
+      "image_id": "jules-d-1424239-unsplash",
+      "category_id": "Jackets & Coats",
+      "product": "https://www.zalando.co.uk/only-and-sons-onscoin-denim-jacket-blue-denim-os322t03h-k11.html",
+      "bbox": [
+        0.11551913378819341,
+        0.245,
+        0.8056719074458617,
+        0.33666666666666667
+      ]
+    },
+    {
+      "id": "0a56e61a-f2c7-4460-be2a-4ef76feede31",
+      "image_id": "jules-d-1424239-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/pepe-jeans-slim-fit-jeans-black-pe122g04t-q11.html",
+      "bbox": [
+        0.08293681400177988,
+        0.5166666666666667,
+        0.873798576090181,
+        0.215
+      ]
+    },
+    {
+      "id": "2f675951-5198-4def-ad71-844cc8375107",
+      "image_id": "jules-d-1424239-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/reebok-classic-workout-trainers-whitegrey-re015o006-a11.html",
+      "bbox": [
+        0.34063334322159594,
+        0.6816666666666666,
+        0.19549391871848115,
+        0.15333333333333332
+      ]
+    },
+    {
+      "id": "94ef63e0-4fbe-4120-be77-7514ab50b497",
+      "image_id": "jules-d-1424239-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/reebok-classic-workout-trainers-whitegrey-re015o006-a11.html",
+      "bbox": [
+        0.6012919015129041,
+        0.6983333333333334,
+        0.1451394245031148,
+        0.14
+      ]
+    },
+    {
+      "id": "8ab1b751-38ef-49ec-af60-55c13e8c2dcd",
+      "image_id": "julian-alexander-22273-unsplash",
+      "category_id": "Eyewear",
+      "product": "https://www.zalando.co.uk/ray-ban-sunglasses-dark-brown-ra254k018-o11.html",
+      "bbox": [
+        0.335,
+        0.225,
+        0.235,
+        0.07833333333333334
+      ]
+    },
+    {
+      "id": "a04d3c4f-9d08-4bbd-951b-1837506cbbe7",
+      "image_id": "julian-alexander-22273-unsplash",
+      "category_id": "Tops & Blouses",
+      "product": "https://www.zalando.co.uk/lee-western-shirt-le422d06n-g11.html",
+      "bbox": [
+        0.1425,
+        0.30833333333333335,
+        0.6925,
+        0.6533333333333333
+      ]
+    },
+    {
+      "id": "dbd02ff8-f114-4785-ab1a-a1995619457b",
+      "image_id": "karina-carvalho-87594-unsplash",
+      "category_id": "Jumpers & Cardigans",
+      "product": "https://www.zalando.co.uk/polo-ralph-lauren-pima-jumper-hunter-navy-po222q03f-k11.html",
+      "bbox": [
+        0.17,
+        0.18666666666666668,
+        0.5925,
+        0.17833333333333334
+      ]
+    },
+    {
+      "id": "21f4c8f3-f446-4d14-b37a-5406b3133b16",
+      "image_id": "karina-carvalho-87594-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/for-anderson-twill-trousers-grey-fof22e00j-c11.html",
+      "bbox": [
+        0.37,
+        0.35333333333333333,
+        0.1825,
+        0.2833333333333333
+      ]
+    },
+    {
+      "id": "ab74ee1d-1d9f-4604-9c14-07dd7f4e0a79",
+      "image_id": "karina-carvalho-87594-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/pier-one-moccasins-cognac-pi912ca0u-o11.html",
+      "bbox": [
+        0.4225,
+        0.625,
+        0.095,
+        0.07333333333333333
+      ]
+    },
+    {
+      "id": "0b57d069-b977-42f5-bed8-18475002b6cd",
+      "image_id": "lexie-barnhorn-576164-unsplash",
+      "category_id": "Skirts",
+      "product": "https://www.zalando.co.uk/noisy-may-nmfelixa-skirt-mini-skirt-black-nm321b04q-q11.html",
+      "bbox": [
+        0.386833588826435,
+        0.46,
+        0.22912451030488842,
+        0.235
+      ]
+    },
+    {
+      "id": "4b4dcf2d-c364-4a02-8f50-a0f8e8ecf2aa",
+      "image_id": "lexie-barnhorn-576164-unsplash",
+      "category_id": "Tops & Blouses",
+      "product": "https://www.zalando.co.uk/esprit-collection-softbusiness-shirt-es421e09f-a11.html",
+      "bbox": [
+        0.42700476920456476,
+        0.23833333333333334,
+        0.29310083461079883,
+        0.27166666666666667
+      ]
+    },
+    {
+      "id": "ef3c9a49-0c6d-4afa-b4cb-b9811bb45017",
+      "image_id": "lexie-barnhorn-576164-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/aldo-elalyan-ankle-cuff-sandals-a0111a094-e11.html",
+      "bbox": [
+        0.6293484925907,
+        0.8466666666666667,
+        0.15175779253960142,
+        0.12166666666666667
+      ]
+    },
+    {
+      "id": "cbaa9dc5-8d89-415a-94cb-662a2abcdd8a",
+      "image_id": "markus-lompa-1289022-unsplash",
+      "category_id": "Jackets & Coats",
+      "product": "https://www.zalando.co.uk/tommy-jeans-essential-jacket-down-jacket-tob22t02r-q11.html",
+      "bbox": [
+        0.5571428571428572,
+        0.30095238095238097,
+        0.19214285714285714,
+        0.2419047619047619
+      ]
+    },
+    {
+      "id": "be5c5eb9-a367-406e-b68e-97963ac64273",
+      "image_id": "markus-lompa-1289022-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/brave-soul-leyland-jeans-skinny-fit-denim-brh22g00k-k11.html",
+      "bbox": [
+        0.5771428571428572,
+        0.5104761904761905,
+        0.16428571428571428,
+        0.18095238095238095
+      ]
+    },
+    {
+      "id": "a00bcac6-8391-4899-90f5-96d48039933b",
+      "image_id": "mohammad-faruque-190944-unsplash",
+      "category_id": "Tops & Tees",
+      "product": "https://www.zalando.co.uk/marc-opolo-denim-short-sleeve-chest-print-t-shirt-combo-op522o016-g11.html",
+      "bbox": [
+        0.3688134057971015,
+        0.38666666666666666,
+        0.23940519323671497,
+        0.25166666666666665
+      ]
+    },
+    {
+      "id": "b94aaa03-1c28-4990-8cf8-f6355428fbb5",
+      "image_id": "mohammad-faruque-190944-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/pepe-jeans-callen-relaxed-fit-jeans-med-used-destroy-pe122g0bk-k11.html",
+      "bbox": [
+        0.4141062801932367,
+        0.62,
+        0.18332830112721418,
+        0.28833333333333333
+      ]
+    },
+    {
+      "id": "f28b0cba-7425-4ad9-a54d-125e5514fc24",
+      "image_id": "mohammad-faruque-190944-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/vans-old-skool-trainers-va215b000-q12.html",
+      "bbox": [
+        0.4378311191626409,
+        0.905,
+        0.10136976650563607,
+        0.055
+      ]
+    },
+    {
+      "id": "c4dc470a-5c6e-4348-aefc-ca2077a35494",
+      "image_id": "mohammad-faruque-190944-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/vans-old-skool-trainers-va215b000-q12.html",
+      "bbox": [
+        0.539200885668277,
+        0.905,
+        0.09921296296296296,
+        0.058333333333333334
+      ]
+    },
+    {
+      "id": "9c0584df-c325-48fb-b154-31b38d805533",
+      "image_id": "mubariz-mehdizadeh-349292-unsplash",
+      "category_id": "Tops & Tees",
+      "product": "https://www.zalando.co.uk/yourturn-basic-t-shirt-black-yo122o0bz-q11.html",
+      "bbox": [
+        0.10663507109004738,
+        0.30833333333333335,
+        0.8382701421800948,
+        0.655
+      ]
+    },
+    {
+      "id": "9501ab43-188a-4e9e-b9eb-7f03a757f84b",
+      "image_id": "mubariz-mehdizadeh-380433-unsplash",
+      "category_id": "Jumpers & Cardigans",
+      "product": "https://www.zalando.co.uk/versace-collection-sportivo-felpa-sweatshirt-nero-vc122s01f-q11.html",
+      "bbox": [
+        0.41250000000000003,
+        0.3933333333333333,
+        0.4770833333333334,
+        0.485
+      ]
+    },
+    {
+      "id": "bbebf6b4-b5c2-4a34-abb9-12028df42688",
+      "image_id": "renata-fraga-719690-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/3x1-rose-carpenter-leg-relaxed-fit-jeans-hester-3x021n00u-k11.html",
+      "bbox": [
+        0.2075,
+        0.14,
+        0.6975,
+        0.5783333333333334
+      ]
+    },
+    {
+      "id": "8ec906a9-53a2-40ed-9b3e-d03f939daa02",
+      "image_id": "renata-fraga-719690-unsplash",
+      "category_id": "Jackets & Coats",
+      "product": "https://www.zalando.co.uk/oakwood-user-winter-coat-beige-oa121u03j-b11.html",
+      "bbox": [
+        0.1625,
+        0.0016666666666666668,
+        0.64,
+        0.4066666666666667
+      ]
+    },
+    {
+      "id": "b862a556-7a27-41da-8b77-dcdb2e088bcc",
+      "image_id": "renata-fraga-719690-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/dr-martens-ankle-boots-schwarz-do212k00c-q11.html",
+      "bbox": [
+        0.4125,
+        0.7233333333333334,
+        0.1425,
+        0.17666666666666667
+      ]
+    },
+    {
+      "id": "20afe891-430d-46e8-aa68-de7b90856b53",
+      "image_id": "renata-fraga-719690-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/dr-martens-ankle-boots-schwarz-do212k00c-q11.html",
+      "bbox": [
+        0.7625,
+        0.74,
+        0.17,
+        0.205
+      ]
+    },
+    {
+      "id": "1d943d70-4a3d-451d-87c3-6e3dd2af4867",
+      "image_id": "tamara-bellis-143262-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/qs-designed-by-bermuda-shorts-qs121s02f-b11.html",
+      "bbox": [
+        0.25066666666666665,
+        0.5433333333333333,
+        0.3659733333333334,
+        0.22666666666666666
+      ]
+    },
+    {
+      "id": "80ac87d3-4bd9-4d0f-8e18-4b6b10abe702",
+      "image_id": "tamara-bellis-143262-unsplash",
+      "category_id": "Jumpers & Cardigans",
+      "product": "https://www.zalando.co.uk/pieces-jumper-night-sky-pe321i071-k11.html",
+      "bbox": [
+        0.25568,
+        0.23,
+        0.36346666666666666,
+        0.32166666666666666
+      ]
+    },
+    {
+      "id": "e2fd883a-27a1-4863-b986-601a0406b573",
+      "image_id": "toa-heftiba-586902-unsplash",
+      "category_id": "Jackets & Coats",
+      "product": "https://www.zalando.co.uk/levisr-original-trucker-denim-jacket-soft-as-butter-dark-le221g031-k11.html",
+      "bbox": [
+        0.2275,
+        0.5166666666666667,
+        0.61,
+        0.41
+      ]
+    },
+    {
+      "id": "9bc5e122-ec02-4566-9f08-4f94459f356c",
+      "image_id": "tyler-nix-597162-unsplash",
+      "category_id": "Jeans & Trousers",
+      "product": "https://www.zalando.co.uk/brave-soul-elba-jeans-skinny-fit-charcoal-grey-brh22g001-c11.html",
+      "bbox": [
+        0.41,
+        0.6466666666666666,
+        0.265,
+        0.26166666666666666
+      ]
+    },
+    {
+      "id": "f8fe2e38-57e7-4aed-98e6-4c69db581734",
+      "image_id": "tyler-nix-597162-unsplash",
+      "category_id": "Shoes",
+      "product": "https://www.zalando.co.uk/adidas-originals-swift-run-shoes-trainers-white-ad112o09n-a11.html",
+      "bbox": [
+        0.4575,
+        0.8933333333333333,
+        0.0975,
+        0.09166666666666666
+      ]
+    },
+    {
+      "id": "5b70405c-5ad8-46ae-8db2-a674cf4262d5",
+      "image_id": "tyler-nix-597162-unsplash",
+      "category_id": "Jumpers & Cardigans",
+      "product": "https://www.zalando.co.uk/mennace-essential-hoody-with-signature-sweatshirt-black-mef22s00w-q11.html",
+      "bbox": [
+        0.3925,
+        0.38166666666666665,
+        0.3125,
+        0.28833333333333333
+      ]
+    }
+  ]
+}

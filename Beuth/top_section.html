@@ -1,0 +1,15 @@
+<h1> Fashion Relation Extraction and Entity Recognition</h1>
+<p>
+This is a demo of the Relation Extraction and Named Entitiy Recognition model developed in FashionBrain work package 6.
+</p> 
+
+<p>
+Given a full text query such as "Tom is obsessed with Kimono jackets", our approach extracts the type of relation depicted in that sentence, "Wants/Likes" in this case. Additionally it extracts the entities that make up this relation.
+</p>
+<p>
+The underlying model employs a Hierarchical Reinforcement Learning approach in which the outer policy predicts the relation type sequentially for each token, while the inner policy works similarly for the entities. 
+The embedding network for full text queries bidirectional Long-Short-Term-Memory (LSTM) unit that works with GloVe embeddings. For each relationtype a separate Linear network is learned, that predicts the entities.
+</p>
+<p>
+The entire architecture is trained "end-to-end" to minimize a similarity cost function with supervised learning over the crowd-sources fashion corpus created by University of Sheffield. The model itself is implemented in Pytorch and Python.
+</p>
