@@ -9,7 +9,6 @@
   background-repeat: no-repeat;
 }
 
-
 #navbar a {
   color: #f16823;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -35,7 +34,7 @@ h1 {
 h2 {
   color: #3f3f3f;
   font-size:18px;
-  margin-top:20px;
+  margin-top:15px;
   text-align: center;
   font-weight: bold;
 }
@@ -51,6 +50,6 @@ p {
 h3 {
   color: #f16823;
   font-size:20px;
-  margin-top:5px;
+  margin-top:10px;
   text-align: center;
   font-weight: bold;
