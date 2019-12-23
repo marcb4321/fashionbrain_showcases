@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>FashionBrain Showcases</title>
+
+    <meta name="description" content="FashionBrain Showscases">
+    <meta name="author" content="Marc Bonne & Iana Gein">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+
+<!-- Navigation bar-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
+
+<div class="menuLogo"></div>
+  <a class="navbar-brand" href="index.html">Showcases</a>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="Beuth.html">Relation extraction</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="Fashwell.html">Shop the Look</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="Zalando.html">End-to-End search</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="MonetDB.html">Integrated architecture</a>
+        </li>
+      </ul>
+</nav>
+<!-- Navigation bar -->
+
+<!-- Main body -->
+  <body>
+
+    <div class="container-fluid text-center">
+      <h1> Fashion Relation Extraction and Entity Recognition</h1>
+      <p> This is a demo of the Relation Extraction and Named Entitiy Recognition model developed in FashionBrain work package 6.
+      </p>
+      <p> Given a full text query such as "Tom is obsessed with Kimono jackets", our approach extracts the type of relation depicted in that sentence, "Wants/Likes" in this case. Additionally it extracts the entities that make up this relation.
+      </p>
+      <p> The underlying model employs a Hierarchical Reinforcement Learning approach in which the outer policy predicts the relation type sequentially for each token, while the inner policy works similarly for the entities.
+      The embedding network for full text queries bidirectional Long-Short-Term-Memory (LSTM) unit that works with GloVe embeddings. For each relationtype a separate Linear network is learned, that predicts the entities.
+      </p>
+      <p> The entire architecture is trained "end-to-end" to minimize a similarity cost function with supervised learning over the crowd-sources fashion corpus created by University of Sheffield. The model itself is implemented in Pytorch and Python.
+      </p>
+    </div>
+
+
+    <!-- iframe -->
+
+<div class="container-fluid text-center">
+<iframe src="index.html" style="border:2px solid orange; height:500px;width:1000px;"></iframe>
+</div>
+<!-- iframe -->
+
+
+
+
+	  <!-- Footer -->
+    <div class="copyright py-4 text-center text-secondary">
+      <div class="container">
+        For more information of Beuth research, please follow this <a href="https://prof.beuth-hochschule.de/loeser/what-we-do/?L=834%27A%3D0">link. </a>
+        <br> Additional demos on FashionBrain work are available in the <a href="https://fashionbrain-project.eu">FashionBrain website</a>, e.g. <a href="https://fashionbrain-project.eu/beuth-tasty-feat-idel-demonstration/">Tasty feat IDEL</a>.
+        <br> <small>Copyright &copy; <a href="https://fashionbrain-project.eu"> FashionBrain</a> 2020 </small>
+      </div>
+    </div>
+<!-- Footer -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
