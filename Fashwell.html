@@ -296,7 +296,7 @@
 function myFunction1() {
   var $iframe = $('#iframe');
   $iframe.ready(function() {
-  $iframe.contents().find("body").append($('#test1'));
+  $iframe.contents().find("body").prepend($('#test1'));
 });
 }
 </script>
@@ -305,7 +305,7 @@ function myFunction1() {
 function myFunction2() {
   var $iframe = $('#iframe');
   $iframe.ready(function() {
-  $iframe.contents().find("body").append($('#test2'));
+  $iframe.contents().find("body").prepend($('#test2'));
 });
 }
 </script>
