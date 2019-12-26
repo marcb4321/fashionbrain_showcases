@@ -254,7 +254,7 @@
             <div class="row text-center text-lg-left">
 
               <div class="col-lg-6 col-md-4 col-6">
-                <button onclick="myFunction()">
+                <button onclick="myFunction1()">
                 <a class="d-block mb-4 h-100">
                       <img class="img-fluid img-thumbnail" src="Fashwell/ImagesFashwell/alexandru-zdrobau-200768-unsplash.jpg" alt="">
                 </a>
@@ -262,7 +262,7 @@
               </div>
 
               <div class="col-lg-6 col-md-4 col-6">
-                <button onclick="myFunction()">
+                <button onclick="myFunction2()">
                 <a class="d-block mb-4 h-100">
                       <img class="img-fluid img-thumbnail" src="Fashwell/ImagesFashwell/anthony-ginsbrook-294309-unsplash.jpg" alt="">
                     </a>
@@ -293,10 +293,19 @@
 
 
 <script>
-function myFunction() {
+function myFunction1() {
   var $iframe = $('#iframe');
   $iframe.ready(function() {
   $iframe.contents().find("body").append($('#test1'));
+});
+}
+</script>
+
+<script>
+function myFunction2() {
+  var $iframe = $('#iframe');
+  $iframe.ready(function() {
+  $iframe.contents().find("body").append($('#test2'));
 });
 }
 </script>
@@ -322,6 +331,62 @@ function myFunction() {
         Category: Bags.
         <a href="https://www.zalando.co.uk/zac-zac-posen-eartha-iconic-soft-top-handle-solid-handbag-zz151h056-g11.html" style="color:blue" target="_blank">
           Best match: Zac Zac Posen Eartha Iconic Soft Top Handle Solid Handbag
+        </a>
+      </span>
+    </li>
+  </ul>
+</div>
+</div>
+
+
+
+
+<div  id="test2">
+<h1>
+  Anthony Ginsbrook
+</h1>
+<div class="output" id="anthony-ginsbrook-294309-unsplash">
+  <img class="img_output" src="Fashwell/ImagesFashwell/anthony-ginsbrook-294309-unsplashBOX.jpg" style=width:40%>
+</div>
+<div class="products">
+  <ul>
+    <li style="color:red">
+      <span style="color:red">
+        Category: Eyewear.
+        <a href="https://www.zalando.co.uk/ray-ban-sunglasses-trasparent--brown-gradient-mirror-silver-ra254e00r-a11.html" style="color:red" target="_blank">
+          Best match: Ray Ban Sunglasses Trasparent  Brown Gradient Mirror Silver
+        </a>
+      </span>
+    </li>
+    <li style="color:blue">
+      <span style="color:blue">
+        Category: Tops &amp; Tees.
+        <a href="https://www.zalando.co.uk/g-star-vim-loose-print-t-shirt-khakiarmy-green-gs121d0i5-t11.html" style="color:blue" target="_blank">
+          Best match: G Star Vim Loose Print T Shirt Khakiarmy Green
+        </a>
+      </span>
+    </li>
+    <li style="color:green">
+      <span style="color:green">
+        Category: Jackets &amp; Coats.
+        <a href="https://www.zalando.co.uk/levisr-original-trucker-denim-jacket-soft-as-butter-dark-le221g031-k11.html" style="color:green" target="_blank">
+          Best match: Levisr Original Trucker Denim Jacket Soft As Butter Dark
+        </a>
+      </span>
+    </li>
+    <li style="color:orange">
+      <span style="color:orange">
+        Category: Jeans &amp; Trousers.
+        <a href="https://www.zalando.co.uk/dorothy-perkins-rip-darcy-jeans-skinny-fit-black-dp521n076-q11.html" style="color:orange" target="_blank">
+          Best match: Dorothy Perkins Rip Darcy Jeans Skinny Fit Black
+        </a>
+      </span>
+    </li>
+    <li style="color:black">
+      <span style="color:black">
+        Category: Shoes.
+        <a href="https://www.zalando.co.uk/converse-run-star-ox-trainers-blackalmost-black-co411a0uz-q11.html" style="color:black" target="_blank">
+          Best match: Converse Run Star Ox Trainers Blackalmost Black
         </a>
       </span>
     </li>
