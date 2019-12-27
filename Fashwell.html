@@ -19,7 +19,9 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
 
-<div class="menuLogo"></div>
+  <a href="index.html">
+  <div class="menuLogo"></div>
+  </a>
   <a class="navbar-brand" href="index.html">Showcases</a>
 
       <ul class="navbar-nav ml-auto">
@@ -255,9 +257,9 @@
 
               <div class="col-lg-6 col-md-4 col-6">
                 <button onclick="myFunction1()">
-                <a class="d-block mb-4 h-100">
-                      <img class="img-fluid img-thumbnail" src="Fashwell/ImagesFashwell/alexandru-zdrobau-200768-unsplash.jpg" alt="">
-                </a>
+                  <a class="d-block mb-4 h-100" >
+                        <img class="img-fluid img-thumbnail" src="Fashwell/ImagesFashwell/alexandru-zdrobau-200768-unsplash.jpg" alt="">
+                  </a>
                 </button>
               </div>
 
@@ -290,21 +292,21 @@
 <!-- test-->
 
 
-
-
 <script>
 function myFunction1() {
-  var $iframe = $('#iframe');
-  document.getElementById("gabriel-benois-1455544-unsplash");
+var $iframe = $('#iframe');
+doc.open();
+doc.write('Test');
+doc.close();
 }
 </script>
 
 
 <script>
 function myFunction2() {
-  var $iframe = $('#iframe');
-  $iframe.ready(function() {
-  $iframe.contents().find("body").prepend($('#test2'));
+  var myFrame = $("#iframe").contents().find('body');
+        var textareaValue = $("textarea").val();
+        test1.html(textareaValue);
 });
 }
 </script>
