@@ -69,6 +69,11 @@ div.ex1 {
   overflow: scroll;
 }
 
+div.ex2 {
+  background-color: #f2f2f2;
+  height: 500px;
+  overflow: scroll;
+}
 /* fashwell */
 #gallery
 {
@@ -79,5 +84,5 @@ div.ex1 {
 }
 
 .img_output {
-  width: 30%;
+  width: 45%;
 }
