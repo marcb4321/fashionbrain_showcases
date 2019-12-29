@@ -99,14 +99,13 @@ ul.thumbs li a.thumbnail:hover .description {
 ul.thumbs li.content {
 	width: 70% !important;
 	display: none;
-	margin-top: 10px;
 	background: none;
 	float: center;
   height: 1500px;
 	position: absolute;
   left: 350px;
   top: 10px;
-	padding: 45px 0 45px;
+	/*padding: 45px 0 45px;*/
 }
 
 ul.thumbs li.content h3 {
