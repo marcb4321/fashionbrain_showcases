@@ -89,20 +89,23 @@ ul.thumbs li a.thumbnail .active-arrow {
 }
 
 ul.thumbs li a.thumbnail:hover .description {
-	height: 50px;
+	height: 30px;
 	opacity: 1;
 }
 
+
+
+/* Image position*/
 ul.thumbs li.content {
 	width: 70% !important;
 	display: none;
-	margin-bottom: 40px;
+	margin-top: 10px;
 	background: none;
-	float: right;
+	float: center;
   height: 1500px;
 	position: absolute;
-  left: 400px;
-  top: 186px;
+  left: 350px;
+  top: 10px;
 	padding: 45px 0 45px;
 }
 
@@ -129,7 +132,7 @@ ul.thumbs li.content .close:hover {
 ul.thumbs li.content .media {
     display: inline-block;
     float: left;
-    margin-right: 20px;
+    margin-right: 10px;
     width: 50%;
     min-height: 970px;
     background-size: cover;
@@ -149,7 +152,7 @@ ul.thumbs li.content .media img {
 		margin-bottom: 20px;
 	}
 }
-@media (max-width: 590px) {
+@media (max-width: 500px) {
 	ul.thumbs li {
 		width: 100% !important;
 	}
@@ -157,11 +160,11 @@ ul.thumbs li.content .media img {
 		display: none !important;
 	}
 }
-@media (max-width: 700px) and (min-width: 590px) {
+@media (max-width: 700px) and (min-width: 500px) {
 	ul.thumbs .media {
 		width: 100% !important;
 		display: block !important;
-		margin-top: 60px;
+		margin-top: 30px;
 	}
 }
 
