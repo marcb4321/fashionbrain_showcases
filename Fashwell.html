@@ -24,6 +24,7 @@
 }
 </style>
 
+
   </head>
 
 <!-- Navigation bar-->
@@ -63,6 +64,7 @@
       </p>
       <p>
       The extracted attributes are either general for all fashion objects or specific for one or several fashion product categories. For every category there are different attribute tags that are relevant. Take for example tops: tops have silhouettes and length whereas a shoe is described by a heel height, fastener and ankle height. On the other hand, color, pattern and occasion are general attributes that are relevant for any fashion product. We have built a classifier which is able to automatically extract such tags from images. We will get into how we collect data and train the classifier to perform such task but for now take a look at the attributes grouped by category that are made available for tagging:
+
 </p>
 </div>
     <div class="container-fluid text-left">
@@ -133,14 +135,14 @@
             <div class="row text-center text-lg-left">
 
               <div class="col-lg-6 col-md-4 col-6">
-                  <a href="#alexandru-zdrobau-200768-unsplash" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="Fashwell/ImagesFashwell/alexandru-zdrobau-200768-unsplash.jpg" alt="">
+
+                        <img class="img-fluid img-thumbnail" id="alexandru-zdrobau-200768-unsplash" src="Fashwell/ImagesFashwell/alexandru-zdrobau-200768-unsplash.jpg" alt="">
                   </a>
               </div>
 
               <div class="col-lg-6 col-md-4 col-6">
-                <a href="#anthony-ginsbrook-294309-unsplash" class="d-block mb-4 h-100">
-                      <img class="img-fluid img-thumbnail" src="Fashwell/ImagesFashwell/anthony-ginsbrook-294309-unsplash.jpg" alt="">
+
+                      <img class="img-fluid img-thumbnail" id="anthony-ginsbrook-294309-unsplash" src="Fashwell/ImagesFashwell/anthony-ginsbrook-294309-unsplash.jpg" alt="">
                     </a>
               </div>
 
@@ -255,6 +257,7 @@
 
 
 
+
   <!-- SECOND column
 <div class="col">
 <div class="ex2">
@@ -269,7 +272,8 @@
 <div class="ex2" >
 
 
-              <div class="output" id="alexandru-zdrobau-200768-unsplash">
+
+              <div class="output" id="alexandru-zdrobau-200768-unsplashBOX">
                 <h1>
                   Alexandru Zdrobau
                 </h1>
@@ -296,7 +300,7 @@
                 </ul>
               </div>
 
-              <div class="output" id="anthony-ginsbrook-294309-unsplash">
+              <div class="output" id="anthony-ginsbrook-294309-unsplashBOX">
                 <h1>
                   Anthony Ginsbrook
                 </h1>
@@ -1030,9 +1034,19 @@
       </div>
     </div>
 <!-- Footer -->
-
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script type="text/javascript">
+    $("#anthony-ginsbrook-294309-unsplash").click(function() {
+      var target = document.getElementById("anthony-ginsbrook-294309-unsplashBOX");
+      target.parentNode.scrollTop = target.offsetTop;
+    });
+
+    $("#alexandru-zdrobau-200768-unsplash").click(function() {
+      var target = document.getElementById("alexandru-zdrobau-200768-unsplashBOX");
+      target.parentNode.scrollTop = target.offsetTop;
+    });
+    </script>
   </body>
 </html>
