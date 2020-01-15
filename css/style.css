@@ -85,5 +85,18 @@ div.ex2 {
 }
 
 .img_output {
-  width: 45%;
+  width: 230px;
+}
+
+
+map:hover, area:hover{
+  cursor: pointer;
+}
+
+.products{
+  padding: 8px;
+}
+
+.products ul{
+  padding-left: 8px;
 }
