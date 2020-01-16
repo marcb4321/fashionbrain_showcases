@@ -75,6 +75,7 @@ div.ex2 {
   height: 500px;
   overflow: scroll;
 }
+
 /* fashwell */
 #gallery
 {
@@ -99,4 +100,12 @@ map:hover, area:hover{
 
 .products ul{
   padding-left: 8px;
+}
+
+div.ex2.output-scroll {
+  overflow: hidden;
+}
+
+.output {
+  margin-top: 210px;
 }
