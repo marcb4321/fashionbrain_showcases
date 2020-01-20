@@ -94,6 +94,7 @@ map:hover, area:hover{
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 .products{
   padding: 8px;
 }
@@ -102,4 +103,14 @@ map:hover, area:hover{
 .products ul li span a {
   text-decoration: underline;
   cursor: pointer;
+=======
+
+.output {
+  margin-top: 10px;
+}
+
+.products {
+  margin-left: 10px;
+  margin-right: 10px;
+>>>>>>> af390c2df1b906ddaceb21449c9514ec2ad602bb
 }
