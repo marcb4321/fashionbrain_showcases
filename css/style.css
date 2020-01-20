@@ -94,20 +94,9 @@ map:hover, area:hover{
   cursor: pointer;
 }
 
-.products{
-  padding: 8px;
-}
-
-.products ul{
-  padding-left: 8px;
-}
-
-div.ex2.output-scroll {
-  overflow: hidden;
-}
 
 .output {
-  margin-top: 220px;
+  margin-top: 10px;
 }
 
 .products {
