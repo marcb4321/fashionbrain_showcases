@@ -1,11 +1,11 @@
 <style>
 	img {
-	width: 100%;	
+	width: 100%;
 	}
 </style>
 <h1>FaBIAM Overview</h1>
 <p>The following figure shows an overview of FaBIAM.
-  <img src="images/MDB_impl_arch.png" alt="" />
+  <img src="images/FaBIAM.png" alt="" />
   All components are integrated into the kernel of MonetDB. The solid arrows indicate the components that can already work together, while the dashed arrows indicating future integration. From bottom to top, they are divided into three layers:</p>
 <ul>
 <li>Data Ingestion Layer<br /> This layer at the bottom of the MonetDB kernel provides various features for loading data into MonetDB. In the fashion world, there are three major groups of data: structured (e.g. product catalogues and sales information), unstructured (e.g. fashion blogs, customer reviews, social media posts and news messages) and binary data (e.g. videos and pictures). A prerequisite for the design of FaBIAM is that it must be able to store and process both structured and unstructured data, while binary data can be generally left as is. Therefore, next to CSV (the de facto standard data format for structured data) MonetDB also support JSON (the de facto standard data format for unstructured data) as a native data type.&nbsp;</li>
